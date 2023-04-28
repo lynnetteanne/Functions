@@ -15,7 +15,7 @@ function addTax(giftTotal) {
 const giftsWithTax = addTax(giftTotal);
 
 function holidayShopping(budget, giftsWithTax) {
-    return budget > giftsWithTax;
+    return budget >= giftsWithTax;
 }
 
 holidayShopping(budget, giftsWithTax);
