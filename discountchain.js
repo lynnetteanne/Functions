@@ -57,7 +57,7 @@ function subCoup (totalPrice) {
     console.log(25 / totalPrice * 100 / 10 * 100)
 }
 
-totalPrice (timmy)
+// totalPrice (object.values(timmy))
 
 
 // Expected Results:
