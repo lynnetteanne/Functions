@@ -41,7 +41,23 @@ const rocky = {
 //if sub, 25% discount
 //if coupon, 10% discount after sub
 
+function totalPrice (pricePerRefill, refill) {
+    console.log(pricePerRefill * refill)
+}
 
+function sub (totalPrice) {
+    console.log(25 / totalPrice * 100)
+}
+
+function coup (totalPrice) {
+    console.log(10 / totalPrice * 100)
+}
+
+function subCoup (totalPrice) {
+    console.log(25 / totalPrice * 100 / 10 * 100)
+}
+
+totalPrice (timmy)
 
 
 // Expected Results:
