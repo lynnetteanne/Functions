@@ -41,23 +41,38 @@ const rocky = {
 //if sub, 25% discount
 //if coupon, 10% discount after sub
 
-function totalPrice (pricePerRefill, refill) {
-    console.log(pricePerRefill * refill)
+//assign which object
+Object = rocky;
+//calculate the total price using refills and pricePerRefill
+function totalPrice (pricePerRefill, refills) {
+    return pricePerRefill * refills;
 }
+//call function
+const rxTotal = totalPrice(Object.pricePerRefill, Object.refills);
 
-function sub (totalPrice) {
-    console.log(25 / totalPrice * 100)
+//calculate sub discount if they have a subscription
+function sub() {
+    if(Object.subscription){
+        return .75 * rxTotal;
+    } else {
+        return rxTotal;
+    }
 }
+//call function
+const afterSub = sub(Object.subscription);
 
-function coup (totalPrice) {
-    console.log(10 / totalPrice * 100)
+//calculate coupon discount if the have a coupon
+function coupon() {
+    if (Object.coupon){
+        return afterSub - 10;
+    } else {
+        return afterSub;
+    }
 }
+//call function
+const afterCoup = coupon(Object.coupon);
 
-function subCoup (totalPrice) {
-    console.log(25 / totalPrice * 100 / 10 * 100)
-}
 
-// totalPrice (object.values(timmy))
 
 
 // Expected Results:
@@ -66,3 +81,5 @@ function subCoup (totalPrice) {
 // Sarah => "Your grand total is $37.5."
 // Rocky => "Your grand total is $102.5"
 
+//print grand total
+console.log("Your grand total is $" + afterCoup);
